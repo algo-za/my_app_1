@@ -75,7 +75,8 @@ for line in proc.stdout:
         filename = 'symbol_fields.csv'
         with open('symbol_fields.csv', 'w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(symbol_fields)
+            for row in data:
+                writer.writerow(row)
 
         def options_order(symbol):
             contract = Contract()
